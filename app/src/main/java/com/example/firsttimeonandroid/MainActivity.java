@@ -7,14 +7,13 @@ import androidx.annotation.NonNull;
 
 public class MainActivity extends BaseActivity {
 
-    public static final String PARAM_TO_SAVE = "PARAM_TO_SAVE";
-    public static final String DEFAULT_VALUE = "";
+    private static final String PARAM_TO_SAVE = "PARAM_TO_SAVE";
+    private static final String DEFAULT_VALUE = "";
 
     private CalculatorData calculatorData;
 
-    public static final int appThemeStandardCodeStyle = 0;
+    protected static final int appThemeStandardCodeStyle = 0;
     protected static final int appThemeDarkCodeStyle = 1;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +64,6 @@ public class MainActivity extends BaseActivity {
             calculatorData.getExpressionResult().setText("");
             calculatorData.getFirstNumber().setText("");
             calculatorData.getSecondNumber().setText("");
-            recreate();
         });
 
         findViewById(R.id.switch_theme).setOnClickListener(v -> {
