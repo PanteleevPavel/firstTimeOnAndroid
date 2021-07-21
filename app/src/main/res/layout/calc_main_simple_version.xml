@@ -2,104 +2,118 @@
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp">
+    android:gravity="center"
+    android:padding="@dimen/main_linear_layout_padding">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:theme="@style/MyNewStyle">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextFirstNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
+                android:layout_marginEnd="@dimen/standard_margin"
                 android:layout_weight="1"
+                android:autofillHints="numberDecimal"
                 android:background="@android:color/darker_gray"
                 android:ems="10"
                 android:gravity="center"
-                android:hint="Первое число"
+                android:hint="@string/first_num"
                 android:inputType="numberDecimal"
-                android:textSize="20sp" />
+                android:textSize="@dimen/main_text_size" />
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextSecondNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="@dimen/standard_margin"
                 android:layout_weight="1"
+                android:autofillHints="numberDecimal"
                 android:background="@android:color/darker_gray"
                 android:ems="10"
                 android:gravity="center"
-                android:hint="Второе число"
+                android:hint="@string/second_num"
                 android:inputType="numberDecimal"
-                android:textSize="20sp" />
+                android:textSize="@dimen/main_text_size" />
         </LinearLayout>
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/textViewResult"
+            style="@style/MyNewStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginVertical="@dimen/text_view_result_margin_vertical"
             android:background="@android:color/darker_gray"
             android:gravity="center"
-            android:text="Результат"
-            android:textSize="20sp" />
+            android:text="@string/result"
+            android:textSize="@dimen/main_text_size" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="15dp"
-            android:orientation="horizontal"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp">
+            android:layout_marginHorizontal="@dimen/buttons_margin_horizontal"
+            android:orientation="horizontal">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonPlus"
+                style="@style/MyNewStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
+                android:layout_marginHorizontal="@dimen/buttons_horizontal_margin"
                 android:layout_weight="1"
-                android:text="+" />
+                android:text="@string/button_plus_text" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonMinus"
+                style="@style/MyNewStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
+                android:layout_marginHorizontal="@dimen/buttons_horizontal_margin"
                 android:layout_weight="1"
-                android:text="-" />
+                android:text="@string/button_minus_text" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonDivisionSign"
+                style="@style/MyNewStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
+                android:layout_marginHorizontal="@dimen/buttons_horizontal_margin"
                 android:layout_weight="1"
-                android:text="/" />
+                android:text="@string/button_division_sign_text" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonX"
+                style="@style/MyNewStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
+                android:layout_marginHorizontal="@dimen/buttons_horizontal_margin"
                 android:layout_weight="1"
-                android:text="x" />
+                android:text="@string/buttonX_text" />
         </LinearLayout>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonClear"
+            style="@style/MyNewStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="45dp"
-            android:text="Очистить" />
+            android:layout_marginHorizontal="@dimen/result_button_horizontal_margin"
+            android:text="@string/button_clear_text" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switch_theme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:checked="false"
+            android:text="@string/button_theme_switch_text" />
     </LinearLayout>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

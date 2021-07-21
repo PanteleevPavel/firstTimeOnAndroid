@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">firstTimeOnAndroid</string>
+    <string name="first_num">Первое число</string>
+    <string name="second_num">Второе число</string>
+    <string name="result">Результат</string>
+    <string name="button_clear_text">Очистить</string>
+    <string name="buttonX_text">x</string>
+    <string name="button_division_sign_text">/</string>
+    <string name="button_minus_text">-</string>
+    <string name="button_plus_text">+</string>
+    <string name="button_theme_switch_text">Тема</string>
 </resources>

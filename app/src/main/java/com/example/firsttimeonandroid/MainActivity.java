@@ -4,21 +4,24 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     public static final String PARAM_TO_SAVE = "PARAM_TO_SAVE";
     public static final String DEFAULT_VALUE = "";
 
     private CalculatorData calculatorData;
 
+    public static final int appThemeStandardCodeStyle = 0;
+    protected static final int appThemeDarkCodeStyle = 1;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calc_main_simple_version);
 
-        calculatorData = new CalculatorData(findViewById(R.id.textViewResult), findViewById(R.id.editTextFirstNumber), findViewById(R.id.editTextSecondNumber));
+        calculatorData = new CalculatorData(findViewById(R.id.textViewResult), findViewById(R.id.editTextFirstNumber), findViewById(R.id.editTextSecondNumber), findViewById(R.id.switch_theme));
 
         findViewById(R.id.buttonMinus).setOnClickListener(v -> {
             if (!calculatorData.getFirstNumber().getText().toString().equals("") && !calculatorData.getSecondNumber().getText().toString().equals("")) {
@@ -62,6 +65,16 @@ public class MainActivity extends AppCompatActivity {
             calculatorData.getExpressionResult().setText("");
             calculatorData.getFirstNumber().setText("");
             calculatorData.getSecondNumber().setText("");
+            recreate();
+        });
+
+        findViewById(R.id.switch_theme).setOnClickListener(v -> {
+            if (calculatorData.getSwitchTheme().isChecked()) {
+                setAppTheme(appThemeDarkCodeStyle);
+            } else {
+                setAppTheme(appThemeStandardCodeStyle);
+            }
+            recreate();
         });
     }
 
