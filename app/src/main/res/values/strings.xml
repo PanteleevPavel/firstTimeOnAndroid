@@ -9,4 +9,6 @@
     <string name="button_minus_text">-</string>
     <string name="button_plus_text">+</string>
     <string name="button_theme_switch_text">Тема</string>
+    <string name="Switch_theme_log_text">Выбор темы</string>
+    <string name="Button_run_calc_text">Запуск калькулятора</string>
 </resources>
