@@ -5,10 +5,13 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.google.android.material.switchmaterial.SwitchMaterial;
+
 public class MainActivity extends BaseActivity {
 
     private static final String PARAM_TO_SAVE = "PARAM_TO_SAVE";
     private static final String DEFAULT_VALUE = "";
+    private static final String THEME_LOG = "THEME_LOG";
 
     private CalculatorData calculatorData;
 
@@ -19,6 +22,11 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calc_main_simple_version);
+
+        boolean theme_log = getIntent().getBooleanExtra(MainActivity.THEME_LOG, false);
+
+        SwitchMaterial switchTheme = findViewById(R.id.switch_theme);
+        switchTheme.setChecked(theme_log);
 
         calculatorData = new CalculatorData(findViewById(R.id.textViewResult), findViewById(R.id.editTextFirstNumber), findViewById(R.id.editTextSecondNumber), findViewById(R.id.switch_theme));
 
